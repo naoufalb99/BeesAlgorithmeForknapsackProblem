@@ -1,1 +1,1 @@
-# BeesAlgorthmeForknapsackProblem
+# BeesAlgorithmeForknapsackProblem
