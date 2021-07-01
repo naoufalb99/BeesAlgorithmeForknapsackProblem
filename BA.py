@@ -1,7 +1,9 @@
 import numpy as np
 import random
 from pprint import pprint
+from data.parse import generateData
 
+fileName = 'f3_l-d_kp_4_20'
 
 ne = 20
 nb = 50
@@ -16,15 +18,16 @@ n = ns + ne * nre + (nb - ne) * nrb
 
 patch = []
 
-##### dataset 1 #######
+##### dataset example #######
 # capacity = 165              #optimum = 309
 # weights = np.array([23, 31, 29, 44, 53, 38, 63, 85, 89, 82])
 # profits = np.array([92, 57, 49, 68, 60, 43, 67, 84, 87, 72])
 
-##### dataset 2 #######
-capacity = 269               #optimum = 295
-weights = np.array([95, 4, 60, 32, 23, 72, 80, 62, 65, 46]) 
-profits = np.array([55, 10, 47, 5, 4, 50, 8, 61, 85, 87])
+
+
+capacity = generateData(fileName)['capacity']
+weights = np.array(generateData(fileName)['weights'])
+profits = np.array(generateData(fileName)['profits'])
 
 
 selected = np.zeros(len(weights))
@@ -135,3 +138,5 @@ foragingStep()
 
 sortedPatch = sorted(patch, key = lambda x: x['scout'][1], reverse=True)
 print(sortedPatch[0])
+
+
