@@ -3,7 +3,7 @@ import random
 from pprint import pprint
 from data.parse import generateData
 
-fileName = 'f3_l-d_kp_4_20'
+dataset = 'f3_l-d_kp_4_20'
 
 ne = 20
 nb = 50
@@ -25,9 +25,9 @@ patch = []
 
 
 
-capacity = generateData(fileName)['capacity']
-weights = np.array(generateData(fileName)['weights'])
-profits = np.array(generateData(fileName)['profits'])
+capacity = generateData(dataset)['capacity']
+weights = np.array(generateData(dataset)['weights'])
+profits = np.array(generateData(dataset)['profits'])
 
 
 selected = np.zeros(len(weights))
