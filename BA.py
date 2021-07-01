@@ -3,7 +3,7 @@ import random
 from pprint import pprint
 from data.parse import generateData
 
-dataset = 'f3_l-d_kp_4_20'
+
 
 ne = 20
 nb = 50
@@ -24,7 +24,7 @@ patch = []
 # profits = np.array([92, 57, 49, 68, 60, 43, 67, 84, 87, 72])
 
 
-
+dataset = 'f1_l-d_kp_10_269'
 capacity = generateData(dataset)['capacity']
 weights = np.array(generateData(dataset)['weights'])
 profits = np.array(generateData(dataset)['profits'])
