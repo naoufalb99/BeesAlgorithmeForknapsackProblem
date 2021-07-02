@@ -17,8 +17,8 @@ def generateData(fileName):
     capacity = int(params[1])
     
     for line in lines :
-        values.append(int(line.split( )[0]))
-        weights.append(int(line.split( )[1]))
+        values.append(int(float(line.split( )[0])))
+        weights.append(int(float(line.split( )[1])))
     
     result = {'weights': weights, 'profits':values,'capacity':capacity}
     
