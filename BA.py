@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from pprint import pprint
-from data.parse import generateData
+from data.parse import generateData, chooseDataset
 
 
 
@@ -24,7 +24,11 @@ patch = []
 # profits = np.array([92, 57, 49, 68, 60, 43, 67, 84, 87, 72])
 
 
-dataset = 'f1_l-d_kp_10_269'
+dataset = chooseDataset()
+if(dataset == None): 
+    print("Invalid dataset")
+    exit()
+
 capacity = generateData(dataset)['capacity']
 weights = np.array(generateData(dataset)['weights'])
 profits = np.array(generateData(dataset)['profits'])
@@ -116,7 +120,7 @@ def localSearch():
 
 def neighborhoodShrinking():
     for i in range(nb):
-        if(patch[i]['stgn'] == True):
+        if(patch[i]['stgn'] == True and patch[i]['neighborhood'] > 0):
             patch[i]['neighborhood'] -= shrinking
 
 def siteAbandonment():
